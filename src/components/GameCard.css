@@ -1,0 +1,13 @@
+.gameCard {
+  width: 200px;
+}
+
+.gameCard:hover {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

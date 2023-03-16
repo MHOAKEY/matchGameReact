@@ -1,28 +1,16 @@
 import "./App.css";
-import reactLogo from "./img/reactLogo.png";
-
-function clickCard() {
-  console.log("clicked");
-}
+import GameCard from "./components/GameCard";
 
 function App() {
+  const gameCards = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6];
   return (
     <div>
       <h1>MATCH GAME</h1>
       <h3>How quick can you match them all?!</h3>
       <div className="gameArea">
-        <img src={reactLogo} onClick={clickCard}></img>
-        <img src={reactLogo} onClick={clickCard}></img>
-        <img src={reactLogo} onClick={clickCard}></img>
-        <img src={reactLogo} onClick={clickCard}></img>
-        <img src={reactLogo} onClick={clickCard}></img>
-        <img src={reactLogo} onClick={clickCard}></img>
-        <img src={reactLogo} onClick={clickCard}></img>
-        <img src={reactLogo} onClick={clickCard}></img>
-        <img src={reactLogo} onClick={clickCard}></img>
-        <img src={reactLogo} onClick={clickCard}></img>
-        <img src={reactLogo} onClick={clickCard}></img>
-        <img src={reactLogo} onClick={clickCard}></img>
+        {gameCards.map((item) => {
+          return <GameCard face={item} />;
+        })}
       </div>
       <div></div>
     </div>
