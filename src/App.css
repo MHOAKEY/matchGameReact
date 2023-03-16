@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.gameArea {
+  width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gameArea > img {
+  width: 200px;
+}
