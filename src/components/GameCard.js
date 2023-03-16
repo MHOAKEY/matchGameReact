@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import reactLogo from "../img/reactLogo.png";
 import "./GameCard.css";
 
-function clickCard(cardValue) {
-  console.log(cardValue);
-}
+// function clickCard(cardValue) {
+//   console.log(cardValue);
+// }
 
 export default function GameCard(props) {
   const [clicked, setClicked] = useState(false);
