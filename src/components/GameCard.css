@@ -4,6 +4,7 @@
 
 .gameCard:hover {
   animation: spin 4s linear infinite;
+  cursor: pointer;
 }
 
 @keyframes spin {
