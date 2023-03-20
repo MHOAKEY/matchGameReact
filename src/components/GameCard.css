@@ -1,7 +1,6 @@
 .gameCard {
   width: 200px;
   height: 200px;
-  background-color: black;
   border-radius: 50%;
 }
 
@@ -19,6 +18,6 @@
 .gameCard--flipped {
   width: 200px;
   height: 200px;
-  background-color: GREY;
+  background-color: lightgray;
   border-radius: 50%;
 }
