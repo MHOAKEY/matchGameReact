@@ -27,8 +27,8 @@ export default function App() {
       <h1>MATCH GAME</h1>
       <h3>How quick can you match them all?!</h3>
       <div className="gameArea">
-        {gameCards.map((item) => {
-          return <GameCard face={item} />;
+        {gameCards.map((item, i) => {
+          return <GameCard key={i} face={item} />;
         })}
       </div>
       <div></div>
