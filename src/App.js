@@ -1,7 +1,7 @@
 import "./App.css";
 import GameCard from "./components/GameCard";
 
-function App() {
+export default function App() {
   const gameCards = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6];
   return (
     <div>
@@ -16,5 +16,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
