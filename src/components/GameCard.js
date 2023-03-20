@@ -9,7 +9,11 @@ import "./GameCard.css";
 export default function GameCard(props) {
   const [clicked, setClicked] = useState(false);
   if (clicked) {
-    return <h1 onClick={() => setClicked(!clicked)}>WORD</h1>;
+    return (
+      <div onClick={() => setClicked(!clicked)}>
+        <img src={props.face} className="gameCard--flipped" />
+      </div>
+    );
   }
   return (
     <div className="gameCard">

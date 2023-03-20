@@ -1,5 +1,8 @@
 .gameCard {
   width: 200px;
+  height: 200px;
+  background-color: black;
+  border-radius: 50%;
 }
 
 .gameCard:hover {
@@ -11,4 +14,11 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.gameCard--flipped {
+  width: 200px;
+  height: 200px;
+  background-color: GREY;
+  border-radius: 50%;
 }
