@@ -11,7 +11,11 @@ export default function GameCard(props) {
   if (clicked) {
     return (
       <div onClick={() => setClicked(!clicked)}>
-        <img src={props.face} className="gameCard--flipped" />
+        <img
+          src={props.face}
+          className="gameCard--flipped"
+          alt="gameCardFaceUp"
+        />
       </div>
     );
   }
@@ -21,7 +25,8 @@ export default function GameCard(props) {
         src={reactLogo}
         onClick={() => setClicked(!clicked)}
         width="200px"
-      ></img>
+        alt="gameCardFaceDown"
+      />
     </div>
   );
 }
