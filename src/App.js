@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "./App.css";
 import GameCard from "./components/GameCard";
 import artemis from "./img/artemisEdit.png";
@@ -22,13 +23,36 @@ export default function App() {
     zoey,
     zoey,
   ];
+
+  const [gameState, setState] = useState({
+    count: 0,
+    firstCard: "",
+    secondCard: "",
+  });
+
+  console.log(gameState);
+
+  if (gameState.count === 2) {
+    if (gameState.firstCard === gameState.secondCard) {
+      setState({ count: 0, firstCard: "", secondCard: "" });
+      console.log("match");
+    }
+  }
+
   return (
     <div>
       <h1>MATCH GAME</h1>
       <h3>How quick can you match them all?!</h3>
       <div className="gameArea">
         {gameCards.map((item, i) => {
-          return <GameCard key={i} face={item} />;
+          return (
+            <GameCard
+              key={i}
+              face={item}
+              eachClick={setState}
+              state={gameState}
+            />
+          );
         })}
       </div>
       <div></div>
