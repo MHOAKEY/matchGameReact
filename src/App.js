@@ -37,6 +37,9 @@ export default function App() {
       setState({ count: 0, firstCard: "", secondCard: "" });
       console.log("match");
     }
+    if (gameState.firstCard !== gameState.secondCard) {
+      setState({ count: 0, firstCard: "", secondCard: "" });
+    }
   }
 
   return (
