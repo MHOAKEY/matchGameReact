@@ -1,64 +1,30 @@
 import React, { useState } from "react";
 import "./App.css";
-import GameCard from "./components/GameCard";
-import artemis from "./img/artemisEdit.png";
-import diana from "./img/dianaEdit.png";
-import diva from "./img/divaEdit.png";
-import luna from "./img/lunaEdit.png";
-import peaches from "./img/peachesEdit.png";
-import zoey from "./img/zoeyEdit.png";
+
+const gamePeices = [
+  { src: "./img/artemisEdit.png" },
+  { src: "./img/dianaEdit.png" },
+  { src: "./img/divaEdit.png" },
+  { src: "./img/lunaEdit.png" },
+  { src: "./img/peachesEdit.png" },
+  { src: "./img/zoeyEdit.png" },
+  { src: "./img/reactLogo.png" },
+  { src: "./components/GameCard" },
+];
 
 export default function App() {
-  const gameCards = [
-    artemis,
-    artemis,
-    diana,
-    diana,
-    diva,
-    diva,
-    luna,
-    luna,
-    peaches,
-    peaches,
-    zoey,
-    zoey,
-  ];
+  //shuffle
 
-  const [gameState, setState] = useState({
-    count: 0,
-    firstCard: "",
-    secondCard: "",
-  });
+  //match
 
-  console.log(gameState);
+  //disable
 
-  if (gameState.count === 2) {
-    if (gameState.firstCard === gameState.secondCard) {
-      setState({ count: 0, firstCard: "", secondCard: "" });
-      console.log("match");
-    }
-    if (gameState.firstCard !== gameState.secondCard) {
-      setState({ count: 0, firstCard: "", secondCard: "" });
-    }
-  }
+  //count turns
 
   return (
-    <div>
+    <div className="gameArea">
       <h1>MATCH GAME</h1>
-      <h3>How quick can you match them all?!</h3>
-      <div className="gameArea">
-        {gameCards.map((item, i) => {
-          return (
-            <GameCard
-              key={i}
-              face={item}
-              eachClick={setState}
-              state={gameState}
-            />
-          );
-        })}
-      </div>
-      <div></div>
+      <button>Reset Game</button>
     </div>
   );
 }

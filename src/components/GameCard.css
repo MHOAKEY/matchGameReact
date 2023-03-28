@@ -1,10 +1,11 @@
-.gameCard {
+.cardFaceDown,
+.cardFaceUp {
   width: 200px;
   height: 200px;
   border-radius: 50%;
 }
 
-.gameCard:hover {
+.cardFaceDown:hover {
   animation: spin 4s linear infinite;
   cursor: pointer;
 }
@@ -15,9 +16,6 @@
   }
 }
 
-.gameCard--flipped {
-  width: 200px;
-  height: 200px;
+.cardFaceUp {
   background-color: lightgray;
-  border-radius: 50%;
 }
