@@ -1,13 +1,20 @@
 import React, { useState } from "react";
+import GameCard from "./components/GameCard.js";
+import artemis from "./img/artemisEdit.png";
+import diana from "./img/dianaEdit.png";
+import diva from "./img/divaEdit.png";
+import luna from "./img/lunaEdit.png";
+import peaches from "./img/peachesEdit.png";
+import zoey from "./img/zoeyEdit.png";
 import "./App.css";
 
 const gameImages = [
-  { src: "./img/artemisEdit.png" },
-  { src: "./img/dianaEdit.png" },
-  { src: "./img/divaEdit.png" },
-  { src: "./img/lunaEdit.png" },
-  { src: "./img/peachesEdit.png" },
-  { src: "./img/zoeyEdit.png" },
+  { src: artemis },
+  { src: diana },
+  { src: diva },
+  { src: luna },
+  { src: peaches },
+  { src: zoey },
 ];
 
 export default function App() {
@@ -30,9 +37,15 @@ export default function App() {
   //count turns
 
   return (
-    <div className="gameArea">
+    <div>
       <h1>MATCH GAME</h1>
       <button onClick={shuffle}>Reset Game</button>
+
+      <div className="gameArea">
+        {gamePieces.map((gamePiece) => (
+          <GameCard key={gamePiece.id} gamePiece={gamePiece} />
+        ))}
+      </div>
     </div>
   );
 }
