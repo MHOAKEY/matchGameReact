@@ -10,12 +10,12 @@
   cursor: pointer;
 }
 
+.cardFaceUp {
+  background-color: lightgray;
+}
+
 @keyframes spin {
   100% {
     transform: rotate(360deg);
   }
-}
-
-.cardFaceUp {
-  background-color: lightgray;
 }
