@@ -1,49 +1,39 @@
-import React, { useState } from "react";
-import GameCard from "./components/GameCard.js";
-import artemis from "./img/artemisEdit.png";
-import diana from "./img/dianaEdit.png";
-import diva from "./img/divaEdit.png";
-import luna from "./img/lunaEdit.png";
-import peaches from "./img/peachesEdit.png";
-import zoey from "./img/zoeyEdit.png";
+import React, { useEffect, useState } from "react";
 import "./App.css";
+import GameCard from "./components/GameCard.js";
 
-const gameImages = [
-  { src: artemis },
-  { src: diana },
-  { src: diva },
-  { src: luna },
-  { src: peaches },
-  { src: zoey },
+const cardImages = [
+  { src: "/img/artemisEdit.png" },
+  { src: "/img/dianaEdit.png" },
+  { src: "/img/divaEdit.png" },
+  { src: "/img/lunaEdit.png" },
+  { src: "/img/peachesEdit.png" },
+  { src: "/img/zoeyEdit.png" },
 ];
 
 export default function App() {
-  const [gamePieces, setGamePieces] = useState([]);
+  const [cards, setCards] = useState([]);
+  const [turns, setTurns] = useState(0);
 
-  const shuffle = () => {
-    const shuffle = [...gameImages, ...gameImages]
-      .sort(() => Math.random())
-      .map((gamePiece) => ({ ...gamePiece, id: Math.random() }));
+  const shuffleCards = () => {
+    const shuffledCards = [...cardImages, ...cardImages]
+      .sort(() => Math.random() - 0.5)
+      .map((card) => ({ ...card, id: Math.random() }));
 
-    setGamePieces(shuffle);
+    setCards(shuffledCards);
+    setTurns(0);
   };
 
-  console.log(gamePieces);
-
-  //match
-
-  //disable
-
-  //count turns
+  console.log(cards, turns);
 
   return (
-    <div>
+    <div className="center">
       <h1>MATCH GAME</h1>
-      <button onClick={shuffle}>Reset Game</button>
+      <button onClick={shuffleCards}>Reset Game</button>
 
-      <div className="gameArea">
-        {gamePieces.map((gamePiece) => (
-          <GameCard key={gamePiece.id} gamePiece={gamePiece} />
+      <div className="card-grid">
+        {cards.map((card) => (
+          <GameCard key={card.id} card={card} />
         ))}
       </div>
     </div>

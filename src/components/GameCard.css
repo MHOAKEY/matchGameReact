@@ -1,16 +1,16 @@
-.cardFaceDown,
-.cardFaceUp {
+.back,
+.front {
   width: 200px;
   height: 200px;
   border-radius: 50%;
 }
 
-.cardFaceDown:hover {
+.back:hover {
   animation: spin 4s linear infinite;
   cursor: pointer;
 }
 
-.cardFaceUp {
+.front {
   background-color: lightgray;
 }
 

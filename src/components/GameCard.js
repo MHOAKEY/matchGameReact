@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import reactLogo from "../img/reactLogo.png";
 import "./GameCard.css";
 
-export default function GameCard({ gamePiece }) {
+export default function GameCard({ card }) {
   return (
-    <div className="gamePiece" key={gamePiece.id}>
+    <div className="card">
       <div>
-        <img className="cardFaceUp" src={gamePiece.src} alt="gamePieceFaceUp" />
-        <img className="cardFaceDown" src={reactLogo} alt="reactLogo" />
+        <img className="front" src={card.src} alt="card front" />
+        <img className="back" src="/img/reactLogo.png" alt="card back" />
       </div>
     </div>
   );
