@@ -26,9 +26,26 @@ export default function App() {
     setTurns(0);
   };
 
-  // handle choice
   const handleChoice = (card) => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
+  };
+
+  useEffect(() => {
+    if (choiceOne && choiceTwo) {
+      if (choiceOne.src === choiceTwo.src) {
+        console.log("MATCH");
+        resetTurn();
+      } else {
+        console.log("NOT A MATCH");
+        resetTurn();
+      }
+    }
+  }, [choiceOne, choiceTwo]);
+
+  const resetTurn = () => {
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setTurns((previousTurns) => previousTurns + 1);
   };
 
   return (
